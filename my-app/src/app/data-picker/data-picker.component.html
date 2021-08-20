@@ -1,0 +1,21 @@
+<div class="b-selector b-selector_marginRight b-selector_mar">
+    <div class="b-selector__fakeBody">
+        <div class="b-selector__body" (click)="openChoiseBox($event)">
+            <div class="b-selector__box">
+                <img src="assets/img/appIcon/data.svg" alt="" class="b-selector__icon">
+                <p class="b-selector__label b-selector__label_empty">Дата</p>
+                <p class="b-selector__choise">{{selectedPoint.title}}</p>
+            </div>
+            <img src="assets/img/appIcon/shape.svg" alt="" class="b-selector__shape" (click)="clearChoise($event)">
+            <img src="assets/img/appIcon/angle.svg" alt="" class="b-selector__angle b-selector__angle_empty">
+        </div>
+        <hr class="b-selector__line">
+    </div>
+    <div class="b-selector__choiseBox">
+        <div class="emptySpaceOnMenu"></div>
+        <p *ngFor="let variable of menuPoint" class="b-selector__variable b-selector__variable_programm"
+            (click)="choise($event, variable)">
+            {{variable.title}}</p>
+        <div class="emptySpaceOnMenu"></div>
+    </div>
+</div>

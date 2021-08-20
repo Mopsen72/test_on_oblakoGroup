@@ -1,0 +1,13 @@
+<div class="activityBlock">
+    <div class="choiseName">
+        <div class="choiseName__box">
+            <input type="text" class="choiseName__input" (focus)="upLabel($event)" (blur)="downLabel($event)">
+            <p class="choiseName__label">Мероприятие</p>
+        </div>
+    </div>
+    <div class="pickerBox">
+        <data-picker></data-picker>
+        <time-picker></time-picker>
+        <couch-picker></couch-picker>
+    </div>
+</div>

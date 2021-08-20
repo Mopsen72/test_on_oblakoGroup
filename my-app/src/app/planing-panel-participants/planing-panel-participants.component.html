@@ -1,0 +1,115 @@
+<div class="participants participants_marT participants_animation">
+    <div class="participants__available">
+        <h4 class="participants__title">Доступные участники</h4>
+        <div class="participants__filterBox">
+            <search-on-planing></search-on-planing>
+            <menu-choise-group-on-planing></menu-choise-group-on-planing>
+            <menu-choise-post-on-planing></menu-choise-post-on-planing>
+            <menu-choise-exp-on-planing></menu-choise-exp-on-planing>
+        </div>
+        <div class="b-filters__settings b-settings">
+            <p class="b-settings__counter">Пользователя</p>
+            <div class="b-settings__setFilter b-dropdownList" (click)="toggleMenu($event)">
+                <img class="b-dropdownList__img" src="assets/img/appIcon/settings.svg" alt="">
+                <p class="b-dropdownList__text">Настроить</p>
+                <div class="b-settingMenu">
+                    <div class="emptySpaceOnMenu"></div>
+                    <div class="b-settingMenu__box">
+                        <p class="b-settingMenu__title">Системные поля</p>
+                        <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
+                            (click)="toggleFilterChoice($event)">
+                            Поиск<img src="assets/img/appIcon/check.svg" alt=""
+                                class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
+                        <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
+                            (click)="toggleFilterChoice($event)">
+                            Группа<img src="assets/img/appIcon/check.svg" alt=""
+                                class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
+                        <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
+                            (click)="toggleFilterChoice($event)">Должность<img src="assets/img/appIcon/check.svg" alt=""
+                                class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
+                        <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
+                            (click)="toggleFilterChoice($event)">Стаж<img src="assets/img/appIcon/check.svg" alt=""
+                                class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
+                    </div>
+                    <div class="b-settingMenu__box">
+                        <p class="b-settingMenu__title">Дополнительные поля</p>
+                        <div class="b-settingMenu__subtitle" (click)="toggleFilterChoice($event)">Подразделение<img
+                                src="assets/img/appIcon/check.svg" alt="" class="b-settingMenu__checkbox"></div>
+                        <div class="b-settingMenu__subtitle" (click)="toggleFilterChoice($event)">Округ<img
+                                src="assets/img/appIcon/check.svg" alt="" class="b-settingMenu__checkbox"></div>
+                        <div class="b-settingMenu__subtitle" (click)="toggleFilterChoice($event)">Город<img
+                                src="assets/img/appIcon/check.svg" alt="" class="b-settingMenu__checkbox"></div>
+                    </div>
+                    <div class="emptySpaceOnMenu"></div>
+                </div>
+            </div>
+            <div class="b-settings__cancelFilter b-canselFilterBtn">
+                <img src="assets/img/appIcon/shape.svg" alt="" class="b-canselFilterBtn__img">
+                <p class="b-canselFilterBtn__text">Сбросить</p>
+            </div>
+        </div>
+        <div class="participants__people">
+            <div *ngIf="(suitableParticipants.length > 0)" class="participants__peopleRow participants__peopleRow_all">
+                <div *ngIf="(checkAllPeople); then active else unActive"></div>
+                <ng-template #active><img src="assets/img/appIcon/checkboxCheck.svg" alt=""
+                        class="participants__checkbox" (click)="checkAll()">
+                </ng-template>
+                <ng-template #unActive><img src="assets/img/appIcon/checkbox.svg" alt="" class="participants__checkbox"
+                        (click)="checkAll()">
+                </ng-template>
+                Все пользователи
+            </div>
+            <div *ngFor="let user of suitableParticipants" class="participants__peopleRow" id="{{user.id}}"
+                draggable="true" (dragstart)="dragPeopleAdd($event)">
+                <div *ngIf="(user.isActive); then active else unActive"></div>
+                <ng-template #active><img src="assets/img/appIcon/checkboxCheck.svg" alt=""
+                        class="participants__checkbox" (click)="checkPeople($event)">
+                </ng-template>
+                <ng-template #unActive><img src="assets/img/appIcon/checkbox.svg" alt="" class="participants__checkbox"
+                        (click)="checkPeople($event)">
+                </ng-template>
+                <img src="assets/img/appIcon/avatar.png" alt="" class="participants__avatar">
+                {{user.name}}
+            </div>
+        </div>
+    </div>
+    <img src="assets/img/appIcon/dragDrop.svg" alt="" class="participants__gragIcon">
+    <div class="participants__include">
+        <h4 class="participants__title">Участники мероприятия</h4>
+        <div *ngIf="(eventPeople.length == 0)" class="participants__peopleCheck participants__peopleCheck_empty"
+            (drop)="dropPeople($event)" (dragover)="allowDrop($event)">
+            <div class="participants__dragNotify">
+                <img src="assets/img/appIcon/drag`n`drop.png" alt="" class="participants__dragNotifyImg">
+                <p class="participants__dragNotifyText">Наполните группу, перетаскивая участников из списка
+                    доступных в
+                    левой колонке</p>
+            </div>
+        </div>
+        <div *ngIf="(eventPeople.length > 0)" class="participants__peopleCheck" (drop)="dropPeople($event)"
+            (dragover)="allowDrop($event)">
+            <div class="participants__peopleRow participants__peopleRow_all">
+                <div *ngIf="(checkAllPeople); then active else unActive"></div>
+                <ng-template #active><img src="assets/img/appIcon/checkboxCheck.svg" alt=""
+                        class="participants__checkbox" (click)="checkAllEventPeople()">
+                </ng-template>
+                <ng-template #unActive><img src="assets/img/appIcon/checkbox.svg" alt="" class="participants__checkbox"
+                        (click)="checkAllEventPeople()">
+                </ng-template>
+                Все пользователи
+            </div>
+            <div *ngFor=" let user of eventPeople" class="participants__peopleRow" id="{{user.id}}" draggable="true"
+                (dragstart)="dragPeopleAdd($event)">
+                <div *ngIf="(user.isActive); then active else unActive"></div>
+                <ng-template #active><img src="assets/img/appIcon/checkboxCheck.svg" alt=""
+                        class="participants__checkbox" (click)="checkPeople($event)">
+                </ng-template>
+                <ng-template #unActive><img src="assets/img/appIcon/checkbox.svg" alt="" class="participants__checkbox"
+                        (click)="checkPeople($event)">
+                </ng-template>
+                <img src="assets/img/appIcon/avatar.png" alt="" class="participants__avatar">
+                <span class="participants__text">{{user.name}}</span>
+                <img src="assets/img/appIcon/bin.svg" alt="" (click)="removePeople($event)">
+            </div>
+        </div>
+    </div>
+</div>

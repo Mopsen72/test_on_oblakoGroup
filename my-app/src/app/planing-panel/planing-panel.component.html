@@ -1,0 +1,21 @@
+<div class="posRel">
+    <div class="b-planingPanel b-planingPanel_position">
+        <div class="b-planingPanel__head">
+            <h4 class="b-planingPanel__title">Планирование</h4>
+            <div class="b-planingPanel__control">
+                <img src="assets/img/appIcon/check.svg" alt=""
+                    class="b-planingPanel__controlImg b-planingPanel__controlImg_marR">
+                <img src="assets/img/appIcon/shape.svg" alt=""
+                    class="b-planingPanel__controlImg b-planingPanel__controlImg_smallMargR"
+                    (click)="closePlaningPanel($event)">
+            </div>
+        </div>
+        <div class="b-tabs b-tabs_marT">
+            <div class="b-tabs__point b-tabs__point_planingPanel b-tabs__point_active" (click)="togglePoint($event)">
+                Основное</div>
+            <div class="b-tabs__point b-tabs__point_planingPanel" (click)="togglePoint($event)">Участники</div>
+        </div>
+        <planing-panel-main *ngIf="opened[0].isOpen" class="posRel"></planing-panel-main>
+        <planing-panel-participants *ngIf="opened[1].isOpen" class="posRel"></planing-panel-participants>
+    </div>
+</div>

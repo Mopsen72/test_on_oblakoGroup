@@ -1,0 +1,49 @@
+<div class="b-filters container_small">
+    <div class="b-filters__components">
+        <search></search>
+        <menu-choise-programm></menu-choise-programm>
+        <menu-choise-period></menu-choise-period>
+        <menu-choise-status></menu-choise-status>
+    </div>
+    <div class="b-filters__settings b-settings">
+        <p class="b-settings__counter">{{sessions.length}} сессии</p>
+        <div class="b-settings__setFilter b-dropdownList" (click)="toggleMenu($event)">
+            <img class="b-dropdownList__img" src="assets/img/appIcon/settings.svg" alt="">
+            <p class="b-dropdownList__text">Настроить фильтр</p>
+            <div class="b-settingMenu">
+                <div class="emptySpaceOnMenu"></div>
+                <div class="b-settingMenu__box">
+                    <p class="b-settingMenu__title">Системные поля</p>
+                    <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
+                        (click)="toggleFilterChoice($event)">
+                        Поиск<img src="assets/img/appIcon/check.svg" alt=""
+                            class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
+                    <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
+                        (click)="toggleFilterChoice($event)">
+                        Программа<img src="assets/img/appIcon/check.svg" alt=""
+                            class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
+                    <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
+                        (click)="toggleFilterChoice($event)">Период<img src="assets/img/appIcon/check.svg" alt=""
+                            class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
+                    <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
+                        (click)="toggleFilterChoice($event)">Статус<img src="assets/img/appIcon/check.svg" alt=""
+                            class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
+                </div>
+                <div class="b-settingMenu__box">
+                    <p class="b-settingMenu__title">Дополнительные поля</p>
+                    <div class="b-settingMenu__subtitle" (click)="toggleFilterChoice($event)">Тренер<img
+                            src="assets/img/appIcon/check.svg" alt="" class="b-settingMenu__checkbox"></div>
+                    <div class="b-settingMenu__subtitle" (click)="toggleFilterChoice($event)">Прогресс<img
+                            src="assets/img/appIcon/check.svg" alt="" class="b-settingMenu__checkbox"></div>
+                </div>
+                <div class="emptySpaceOnMenu"></div>
+            </div>
+        </div>
+        <div class="b-settings__cancelFilter b-canselFilterBtn">
+            <img src="assets/img/appIcon/shape.svg" alt="" class="b-canselFilterBtn__img">
+            <p class="b-canselFilterBtn__text">Сбросить</p>
+        </div>
+    </div>
+</div>
+<menu-choise-sort></menu-choise-sort>
+<session></session>

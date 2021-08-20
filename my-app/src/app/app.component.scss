@@ -1,0 +1,26 @@
+.b-title {
+    display: flex;
+    @media (max-width: 667px) {
+        display: none;
+    }
+    &_marginBot {
+        margin-bottom: 28px;
+    }
+    &__icon {
+        &_marginLeftSmall {
+            margin-left: 2px;
+        }
+    }
+    &__text {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 38px;
+        line-height: 40px;
+        color: rgba(0, 0, 0, 0.87);
+        margin: 0;
+        &_marginleft {
+            margin-left: 18px;
+        }
+    }
+}

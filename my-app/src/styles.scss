@@ -1,0 +1,122 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$my-app-primary: mat.define-palette(mat.$indigo-palette);
+$my-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$my-app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$my-app-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-app-primary,
+      accent: $my-app-accent,
+      warn: $my-app-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($my-app-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext");
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  &_small {
+    max-width: 1146px;
+    margin: 0 auto;
+    &_forTable {
+      max-width: 1162px;
+      margin: 0 auto;
+    }
+  }
+}
+.emptySpaceOnMenu {
+  height: 8px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.posRel {
+  position: relative;
+}
+body {
+  overflow-x: hidden;
+}
+@keyframes open_setting_subtitle {
+  0% {
+    font-size: 0px;
+    line-height: 0px;
+    height: 5px;
+    padding: 0 16px;
+  }
+  100% {
+    height: 36px;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 10px 16px;
+  }
+}
+
+@keyframes open_setting_title {
+  0% {
+    font-size: 0px;
+    line-height: 0px;
+    padding: 0 16px;
+  }
+  100% {
+    font-size: 10px;
+    line-height: 12px;
+    padding: 10px 16px;
+  }
+}
+@keyframes menu_choise_variabe {
+  0% {
+    height: 0;
+    padding: 0 16px;
+    font-size: 0;
+    line-height: 0;
+  }
+  100% {
+    height: 36px;
+    padding: 10px 16px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+@keyframes planing_panel_open {
+  0% {
+    left: 856px;
+  }
+  100% {
+    left: 0;
+  }
+}

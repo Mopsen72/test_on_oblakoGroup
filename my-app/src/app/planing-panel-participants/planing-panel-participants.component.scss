@@ -1,0 +1,268 @@
+.participants {
+    display: flex;
+    justify-content: space-between;
+    &_marT {
+        margin-top: 35px;
+    }
+    &__title {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    &__available {
+        width: 394px;
+    }
+    &__include {
+        width: 394px;
+    }
+    &__gragIcon {
+        width: 9px;
+        margin-top: 254px;
+    }
+    &__filterBox {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 28px;
+        height: 140px;
+        align-content: space-between;
+    }
+    &__people {
+        margin-top: 30px;
+    }
+    &__peopleCheck {
+        margin-top: 30px;
+        min-height: 517px;
+        &_empty {
+            border: 1px dashed rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+    }
+    &__peopleRow {
+        width: 410px;
+        height: 36px;
+        margin: 0 -8px;
+        padding: 8px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+    }
+    &__peopleRow:hover {
+        background-color: rgba(0, 0, 0, 0.034);
+        border-radius: 4px;
+    }
+    &__checkbox {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+    }
+    &__avatar {
+        width: 20px;
+        height: 20px;
+        margin-right: 16px;
+    }
+    &__text {
+        width: 320px;
+    }
+    &__dragNotify {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 200px;
+    }
+    &__dragNotifyImg {
+        margin-bottom: 24px;
+        width: 168px;
+        height: 52px;
+    }
+    &__dragNotifyText {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.38);
+        text-align: center;
+        width: 317px;
+    }
+    &_animation {
+        position: absolute;
+        left: 0;
+        animation-name: planing_panel_open;
+        animation-duration: 1s;
+    }
+}
+.b-filters {
+    @media (max-width: 667px) {
+        display: flex;
+    }
+    &__components {
+        margin-top: 56px;
+        height: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        @media (max-width: 667px) {
+            margin-top: 23px;
+            margin-left: 18px;
+        }
+    }
+    &__settings {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+.b-settings {
+    &__counter {
+        height: 36px;
+        width: 100px;
+        display: flex;
+        align-items: center;
+
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.54);
+        margin: 0;
+        @media (max-width: 667px) {
+            display: none;
+        }
+    }
+    &__setFilter {
+        width: 130px;
+        height: 36px;
+        position: relative;
+        @media (max-width: 667px) {
+            margin-left: 12px;
+            margin-top: 4px;
+            width: 20px;
+        }
+    }
+}
+.b-settingMenu {
+    position: absolute;
+    display: none;
+    top: 42px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    width: 168px;
+    &__box {
+        box-sizing: border-box;
+        margin: 0;
+    }
+    &__title {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 12px;
+        color: rgba(0, 0, 0, 0.54);
+        margin: 0;
+        padding: 10px 16px;
+        animation-name: open_setting_title;
+        animation-duration: 1s;
+    }
+    &__subtitle {
+        height: 36px;
+        box-sizing: border-box;
+        padding: 10px 16px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.87);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        cursor: pointer;
+        animation-name: open_setting_subtitle;
+        animation-duration: 1s;
+        &:hover {
+            background-color: #f6f6f6;
+        }
+        &_active {
+            color: #1071ff;
+        }
+    }
+    &__checkbox {
+        width: 12px;
+        display: none;
+        &_active {
+            display: block;
+        }
+    }
+    &_show {
+        display: block;
+    }
+}
+
+.b-dropdownList {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    &__img {
+        margin-right: 10px;
+        width: 13.5px;
+        @media (max-width: 667px) {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    &__text {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        color: #1071ff;
+        margin: 0;
+        @media (max-width: 667px) {
+            display: none;
+        }
+    }
+}
+:hover > .b-dropdownList {
+    background-color: #f6f9ff;
+}
+:focus > .b-dropdownList {
+    background-color: #e2eeff;
+}
+:active > .b-dropdownList {
+    background-color: #d9e8ff;
+}
+.b-canselFilterBtn {
+    height: 36px;
+    align-items: center;
+    display: flex;
+    @media (max-width: 667px) {
+        display: none;
+    }
+    &__img {
+        margin-right: 12px;
+        width: 9px;
+    }
+    &__text {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0;
+        color: rgba(0, 0, 0, 0.54);
+    }
+}

@@ -1,0 +1,31 @@
+<div class="planingPanel__main">
+    <menu-choise-programm-on-planing></menu-choise-programm-on-planing>
+    <h4 class="b-subtitle b-subtitle_margT">Мероприятие, дата и время проведения</h4>
+    <div>
+        <menu-choise-lesson></menu-choise-lesson>
+        <menu-choise-lesson></menu-choise-lesson>
+        <menu-choise-lesson></menu-choise-lesson>
+    </div>
+    <div class="conditions conditions_marT">
+        <p class="conditions__title">Условия записи по коду</p>
+        <div class="conditions__radioBox">
+            <div class="conditions__radio conditions__radio_active" (click)="changeRadio($event)">
+                <img src="assets/img/appIcon/radioButtonActive.svg" alt=""
+                    class="conditions__radioImg">{{conditions[0].title}}
+            </div>
+            <div class="conditions__radio" (click)="changeRadio($event)">
+                <img src="assets/img/appIcon/radioButton.svg" alt=""
+                    class="conditions__radioImg">{{conditions[1].title}}
+            </div>
+            <div class="conditions__radio" (click)="changeRadio($event)">
+                <img src="assets/img/appIcon/radioButton.svg" alt=""
+                    class="conditions__radioImg">{{conditions[2].title}}
+            </div>
+            <div class="conditions__radio" (click)="changeRadio($event)">
+                <img src="assets/img/appIcon/radioButton.svg" alt=""
+                    class="conditions__radioImg">{{conditions[3].title}}
+            </div>
+        </div>
+
+    </div>
+</div>

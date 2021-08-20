@@ -1,0 +1,20 @@
+<div class="b-selector">
+    <div class="b-selector__fakeBody">
+        <div class="b-selector__body">
+            <div class="b-selector__box">
+                <p class="b-selector__label">Должность</p>
+                <p class="b-selector__choise">{{selectedPoint.title}}</p>
+            </div>
+            <img src="assets/img/appIcon/angle.svg" alt="" class="b-selector__angle">
+        </div>
+        <hr class="b-selector__line">
+    </div>
+
+    <div class="b-selector__choiseBox">
+        <div class="emptySpaceOnMenu"></div>
+        <p *ngFor="let variable of menuPoint" (click)="onSelect(variable)"
+            class="b-selector__variable b-selector__variable_postOnPlan">
+            {{variable.title}}</p>
+        <div class="emptySpaceOnMenu"></div>
+    </div>
+</div>
