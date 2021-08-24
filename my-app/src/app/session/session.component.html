@@ -6,7 +6,8 @@
         <p class="b-tables__coach">Тренер</p>
         <p class="b-tables__progress">Прогресс</p>
     </div>
-    <div *ngFor="let lesson of sessions" class="b-tables__row" id={{lesson.id}}>
+    <div *ngFor="let lesson of sessions" class="b-tables__row" id={{lesson.id}}
+        (click)="smallMenuToggleOnPhone($event, lesson)">
         <p class="b-tables__date b-tables__date_inTable b-tables__text">{{lesson.date}}</p>
         <p class="b-tables__title b-tables__title_inTable b-tables__text">{{lesson.title}}</p>
         <p class="b-tables__participants b-tables__participants_inTable b-tables__text">{{lesson.participants}}</p>
@@ -15,10 +16,9 @@
             <img src="assets/img/appIcon/progressIcon.svg" alt="" class="b-tables__progressImg">
             <span>{{lesson.progress}} %</span>
         </div>
-        <div class="b-tables__settings b-tables__text" (click)="smallMenuToggle($event)"><img
-                src="assets/img/appIcon/pressed.svg" alt="">
+        <button class="b-tables__settings b-tables__text" (click)="smallMenuToggle($event)"><img
+                src="assets/img/appIcon/pressed.svg" alt="" class="b-tables__settingsImg">
             <div class="b-tables__menu b-smallMenu">
-                <div class="emptySpaceOnMenu"></div>
                 <div class="b-smallMenu__menuPoint"><img src="assets/img/appIcon/pen.svg" alt=""
                         class="b-smallMenu__img">
                     <p class="b-smallMenu__text">Редактировать</p>
@@ -27,8 +27,7 @@
                         class="b-smallMenu__img">
                     <p class="b-smallMenu__text" (click)="deliteRow($event)">Удалить слот</p>
                 </div>
-                <div class="emptySpaceOnMenu"></div>
             </div>
-        </div>
+        </button>
     </div>
 </div>

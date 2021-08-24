@@ -10,12 +10,10 @@
                     (click)="closePlaningPanel($event)">
             </div>
         </div>
-        <div class="b-tabs b-tabs_marT">
-            <div class="b-tabs__point b-tabs__point_planingPanel b-tabs__point_active" (click)="togglePoint($event)">
-                Основное</div>
-            <div class="b-tabs__point b-tabs__point_planingPanel" (click)="togglePoint($event)">Участники</div>
+        <div class="b-planingPanel__tabs">
+            <tabs [points]="planginPanelTabs"></tabs>
         </div>
-        <planing-panel-main *ngIf="opened[0].isOpen" class="posRel"></planing-panel-main>
-        <planing-panel-participants *ngIf="opened[1].isOpen" class="posRel"></planing-panel-participants>
+        <planing-panel-main *ngIf="planginPanelTabs[0].isActive" class="posRel"></planing-panel-main>
+        <planing-panel-participants *ngIf="planginPanelTabs[1].isActive" class="posRel"></planing-panel-participants>
     </div>
 </div>

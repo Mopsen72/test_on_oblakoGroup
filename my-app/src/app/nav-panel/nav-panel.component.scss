@@ -3,15 +3,9 @@
     justify-content: space-between;
     height: 64px;
     align-items: center;
-    @media (max-width: 667px) {
-        height: 40px;
-    }
     &__sideBar {
         &_marginLeft {
             margin-left: 27px;
-            @media (max-width: 667px) {
-                margin-left: 20px;
-            }
         }
     }
     &__planing {
@@ -19,48 +13,29 @@
     }
     &__title {
         display: none;
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: bold;
+        font-family: Montserrat bold;
         font-size: 14px;
         line-height: 18px;
         color: rgba(0, 0, 0, 0.87);
-        @media (max-width: 667px) {
-            display: block;
-        }
     }
 }
 .b-link {
     &__simbol {
         cursor: pointer;
-        @media (max-width: 667px) {
-            height: 16px;
-        }
         &_marginRight {
             margin-right: 11px;
-            @media (max-width: 667px) {
-                margin-right: 0;
-            }
         }
     }
     &_marginRight {
         margin-right: 44px;
-        @media (max-width: 667px) {
-            margin-right: 20px;
-        }
     }
     &__text {
         cursor: pointer;
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: 600;
+        font-family: Montserrat bold;
         font-size: 12px;
         line-height: 16px;
         color: #1071ff;
         margin: 0;
-        @media (max-width: 667px) {
-            display: none;
-        }
     }
     &__cover {
         position: absolute;
@@ -73,6 +48,34 @@
         background-color: rgba(255, 255, 255, 0.719);
         &_show {
             display: block;
+        }
+    }
+}
+@media (max-width: 667px) {
+    .b-navPanel {
+        height: 40px;
+        &__sideBar {
+            &_marginLeft {
+                margin-left: 20px;
+            }
+        }
+        &__title {
+            margin: 0;
+            display: block;
+        }
+    }
+    .b-link {
+        &__simbol {
+            height: 16px;
+            &_marginRight {
+                margin-right: 0;
+            }
+        }
+        &_marginRight {
+            margin-right: 20px;
+        }
+        &__text {
+            display: none;
         }
     }
 }

@@ -1,49 +1,68 @@
 <div class="b-filters container_small">
     <div class="b-filters__components">
         <search></search>
-        <menu-choise-programm></menu-choise-programm>
-        <menu-choise-period></menu-choise-period>
-        <menu-choise-status></menu-choise-status>
+        <menu-select [selector]="selectProgramm"></menu-select>
+        <menu-select [selector]="selectPeroid"></menu-select>
+        <menu-select [selector]="selectStatus"></menu-select>
     </div>
     <div class="b-filters__settings b-settings">
         <p class="b-settings__counter">{{sessions.length}} сессии</p>
-        <div class="b-settings__setFilter b-dropdownList" (click)="toggleMenu($event)">
+        <button class="b-settings__setFilter b-dropdownList" (click)="toggleMenu($event)">
             <img class="b-dropdownList__img" src="assets/img/appIcon/settings.svg" alt="">
             <p class="b-dropdownList__text">Настроить фильтр</p>
             <div class="b-settingMenu">
-                <div class="emptySpaceOnMenu"></div>
                 <div class="b-settingMenu__box">
                     <p class="b-settingMenu__title">Системные поля</p>
-                    <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
-                        (click)="toggleFilterChoice($event)">
-                        Поиск<img src="assets/img/appIcon/check.svg" alt=""
-                            class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
-                    <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
-                        (click)="toggleFilterChoice($event)">
-                        Программа<img src="assets/img/appIcon/check.svg" alt=""
-                            class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
-                    <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
-                        (click)="toggleFilterChoice($event)">Период<img src="assets/img/appIcon/check.svg" alt=""
-                            class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
-                    <div class="b-settingMenu__subtitle b-settingMenu__subtitle_active"
-                        (click)="toggleFilterChoice($event)">Статус<img src="assets/img/appIcon/check.svg" alt=""
-                            class="b-settingMenu__checkbox b-settingMenu__checkbox_active"></div>
+                    <ul class="b-settingMenu__list">
+                        <li (click)="toggleFilterChoice($event)">
+                            <input type="checkbox" name="checkbox" [checked]="list[0].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label id="{{list[0].id}}" [class]="list[0].classes">{{list[0].title}}</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox" [checked]="list[1].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label (click)="toggleFilterChoice($event)" id="{{list[1].id}}"
+                                [class]="list[1].classes">{{list[1].title}}</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox" [checked]="list[2].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label (click)="toggleFilterChoice($event)" id="{{list[2].id}}"
+                                [class]="list[2].classes">{{list[2].title}}</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox" [checked]="list[3].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label (click)="toggleFilterChoice($event)" id="{{list[3].id}}"
+                                [class]="list[3].classes">{{list[3].title}}</label>
+                        </li>
+                    </ul>
                 </div>
                 <div class="b-settingMenu__box">
                     <p class="b-settingMenu__title">Дополнительные поля</p>
-                    <div class="b-settingMenu__subtitle" (click)="toggleFilterChoice($event)">Тренер<img
-                            src="assets/img/appIcon/check.svg" alt="" class="b-settingMenu__checkbox"></div>
-                    <div class="b-settingMenu__subtitle" (click)="toggleFilterChoice($event)">Прогресс<img
-                            src="assets/img/appIcon/check.svg" alt="" class="b-settingMenu__checkbox"></div>
+                    <ul class="b-settingMenu__list">
+                        <li>
+                            <input type="checkbox" name="checkbox" [checked]="list[4].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label (click)="toggleFilterChoice($event)" id="{{list[4].id}}"
+                                [class]="list[4].classes">{{list[4].title}}</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox" [checked]="list[5].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label (click)="toggleFilterChoice($event)" id="{{list[5].id}}"
+                                [class]="list[5].classes">{{list[5].title}}</label>
+                        </li>
+                    </ul>
                 </div>
-                <div class="emptySpaceOnMenu"></div>
             </div>
-        </div>
-        <div class="b-settings__cancelFilter b-canselFilterBtn">
+        </button>
+        <button class="b-settings__cancelFilter b-canselFilterBtn">
             <img src="assets/img/appIcon/shape.svg" alt="" class="b-canselFilterBtn__img">
             <p class="b-canselFilterBtn__text">Сбросить</p>
-        </div>
+        </button>
     </div>
 </div>
-<menu-choise-sort></menu-choise-sort>
+<menu-select [selector]="selectSort"></menu-select>
 <session></session>

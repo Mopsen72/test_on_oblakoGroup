@@ -19,9 +19,7 @@
         align-items: center;
     }
     &__title {
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: bold;
+        font-family: Montserrat titleBold;
         font-size: 18px;
         line-height: 24px;
         color: rgba(0, 0, 0, 0.87);
@@ -40,48 +38,7 @@
             margin-right: 27px;
         }
     }
-}
-@keyframes planing_open {
-    0% {
-        right: -856px;
-    }
-    100% {
-        right: 0;
-    }
-}
-
-.b-tabs {
-    display: flex;
-    @media (max-width: 667px) {
-        :first-child {
-            margin-left: 18px;
-        }
-    }
-    &__point {
-        height: 36px;
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 16px;
-        color: rgba(0, 0, 0, 0.54);
-        display: flex;
-        align-items: center;
-        margin-right: 25px;
-        box-sizing: border-box;
-        cursor: pointer;
-        @media (max-width: 667px) {
-            margin-right: 16px;
-        }
-        &_active {
-            color: rgba(0, 0, 0, 0.87);
-            border-bottom: 2px solid #1071ff;
-        }
-    }
-    &__line {
-        color: rgba(0, 0, 0, 0.08);
-    }
-    &_marT {
-        margin-top: 21px;
+    &__tabs {
+        margin-top: 20px;
     }
 }

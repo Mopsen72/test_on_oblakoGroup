@@ -1,7 +1,5 @@
 .b-subtitle {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
+    font-family: Montserrat titleBold;
     font-size: 14px;
     line-height: 18px;
     color: rgba(0, 0, 0, 0.87);
@@ -11,9 +9,7 @@
 }
 .conditions {
     &__title {
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: bold;
+        font-family: Montserrat titleBold;
         font-size: 14px;
         line-height: 18px;
         color: rgba(0, 0, 0, 0.87);
@@ -23,8 +19,6 @@
     }
     &__radio {
         font-family: Montserrat;
-        font-style: normal;
-        font-weight: 500;
         font-size: 12px;
         line-height: 16px;
         color: rgba(0, 0, 0, 0.54);
@@ -49,6 +43,7 @@
     }
 }
 .planingPanel__main {
+    margin-top: 33px;
     position: absolute;
     left: 0;
     animation-name: planing_panel_open;

@@ -35,7 +35,31 @@ $my-app-theme: mat.define-light-theme(
 @include mat.all-component-themes($my-app-theme);
 
 /* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext");
+
+@font-face {
+  font-family: "Montserrat title";
+  src: url("assets/font/montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Montserrat bold";
+  src: url("assets/font/montserrat/Montserrat-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/font/montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Montserrat titleBold";
+  src: url("assets/font/montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
 * {
   margin: 0;
   padding: 0;
@@ -118,5 +142,41 @@ body {
   }
   100% {
     left: 0;
+  }
+}
+@keyframes small_menu_open_text {
+  0% {
+    font-size: 0;
+    line-height: 0;
+  }
+  100% {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+@keyframes small_menu_open_point {
+  0% {
+    height: 0;
+    width: 60px;
+  }
+  100% {
+    width: 162px;
+    height: 36px;
+  }
+}
+@keyframes planing_open {
+  0% {
+    right: -856px;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes tabs_active_after {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }

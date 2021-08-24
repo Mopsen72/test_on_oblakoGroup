@@ -1,31 +1,37 @@
 .b-tabs {
     display: flex;
-    @media (max-width: 667px) {
-        :first-child {
-            margin-left: 18px;
-        }
-    }
+    list-style-type: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     &__point {
+        margin-right: 25px;
         height: 36px;
         font-family: Montserrat;
-        font-style: normal;
-        font-weight: 500;
         font-size: 12px;
         line-height: 16px;
         color: rgba(0, 0, 0, 0.54);
         display: flex;
         align-items: center;
-        margin-right: 25px;
         box-sizing: border-box;
+        position: relative;
         @media (max-width: 667px) {
             margin-right: 16px;
         }
         &_active {
             color: rgba(0, 0, 0, 0.87);
-            border-bottom: 2px solid #1071ff;
+            &::after {
+                content: "";
+                position: absolute;
+                border-bottom: 2px solid #1071ff;
+                bottom: 0;
+                width: 100%;
+                animation-name: tabs_active_after;
+                animation-duration: 1s;
+            }
         }
     }
-    &__line {
-        color: rgba(0, 0, 0, 0.08);
+}
+@media (max-width: 667px) {
+    .b-tabs:first-child {
+        margin-left: 18px;
     }
 }

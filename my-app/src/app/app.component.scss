@@ -6,15 +6,16 @@
     &_marginBot {
         margin-bottom: 28px;
     }
+    &_marginTop {
+        margin-top: 19px;
+    }
     &__icon {
         &_marginLeftSmall {
             margin-left: 2px;
         }
     }
     &__text {
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: bold;
+        font-family: Montserrat title;
         font-size: 38px;
         line-height: 40px;
         color: rgba(0, 0, 0, 0.87);

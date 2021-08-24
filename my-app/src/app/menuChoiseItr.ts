@@ -1,5 +1,12 @@
 export interface MenuChoiser {
-    title: string,
-    isActive: boolean,
-    id: number
+    placeholder: string;
+    menuPoint: {
+        title: string;
+        isActive: boolean;
+        id: string;
+    }[];
+    classList: string;
+    classListbody: string;
 }
+
+

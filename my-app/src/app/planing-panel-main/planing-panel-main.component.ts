@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuChoiser } from '../menuChoiseItr';
 
 @Component({
   selector: 'planing-panel-main',
@@ -13,6 +14,19 @@ export class PlaningPanelMainComponent implements OnInit {
     { title: 'Запросить только имя и фамилию', active: false, id: 2 },
     { title: 'Не требовать регистрацию, имя и фамилию', active: false, id: 3 }
   ]
+  public selectProgrammInPlaning: MenuChoiser = {
+    placeholder: "Программа",
+    menuPoint: [
+      { title: 'Страхование с заботой о клиенте', isActive: true, id: 'selPlanPr0000' },
+      { title: 'lorem lorem lorem lorem lorem', isActive: false, id: 'selPlanPr0001' },
+      { title: 'lorem lorem lorem lorem lorem lorem lorem', isActive: false, id: 'selPlanPr0002' }
+    ],
+    classList: 'b-selector b-selector_margin',
+    classListbody: 'b-selector__body b-selector__body_planingProgramm'
+  }
+  public selectDate = {
+    placeholder: 'Дата',
+  }
 
   constructor() { }
 
