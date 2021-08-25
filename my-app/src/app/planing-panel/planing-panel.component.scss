@@ -1,0 +1,44 @@
+.b-planingPanel {
+    background-color: #ffffff;
+    box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.08);
+    width: 856px;
+    height: 940px;
+    padding: 20px 16px 20px 24px;
+    box-sizing: border-box;
+    animation-name: planing_open;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    &_position {
+        position: absolute;
+        top: 18px;
+        right: -856px;
+    }
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__title {
+        font-family: Montserrat titleBold;
+        font-size: 18px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.87);
+        margin: 0;
+    }
+    &__control {
+        display: flex;
+    }
+    &__controlImg {
+        height: 12px;
+        cursor: pointer;
+        &_smallMargR {
+            margin-right: 4px;
+        }
+        &_marR {
+            margin-right: 27px;
+        }
+    }
+    &__tabs {
+        margin-top: 20px;
+    }
+}

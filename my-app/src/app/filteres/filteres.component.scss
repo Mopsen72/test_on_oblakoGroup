@@ -1,0 +1,202 @@
+.b-filters {
+    &__components {
+        margin-top: 56px;
+        height: 40px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__settings {
+        display: flex;
+    }
+    &__search {
+        margin-right: 30px;
+        width: 166px;
+    }
+    &__select {
+        margin-right: 30px;
+    }
+}
+.b-settings {
+    margin-top: 25px;
+    &__counter {
+        margin: 0;
+        height: 36px;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        font-family: Montserrat;
+        font-size: 12px;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+    &__setFilter {
+        position: relative;
+        margin-left: 38px;
+        width: 181px;
+        height: 36px;
+    }
+    &__cancelFilter {
+        margin-left: 5px;
+    }
+}
+.b-settingMenu {
+    position: absolute;
+    top: 42px;
+    display: none;
+    width: 168px;
+    padding: 8px 0;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    &__box {
+        box-sizing: border-box;
+        margin: 0;
+    }
+    &__list {
+        list-style-type: none;
+    }
+    &__title {
+        margin: 0;
+        padding: 10px 16px;
+        font-family: Montserrat;
+        font-size: 10px;
+        line-height: 12px;
+        text-align: start;
+        color: rgba(0, 0, 0, 0.54);
+        animation-name: open_setting_title;
+        animation-duration: 1s;
+    }
+    &__subtitle {
+        position: relative;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 36px;
+        box-sizing: border-box;
+        padding: 10px 16px;
+        font-family: Montserrat;
+        font-size: 12px;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.87);
+        cursor: pointer;
+        animation-name: open_setting_subtitle;
+        animation-duration: 1s;
+        &:hover {
+            background-color: #f6f6f6;
+        }
+        &_active {
+            color: #1071ff;
+        }
+        &::after {
+            content: "";
+            width: 16px;
+            height: 16px;
+            display: block;
+        }
+    }
+    &__checkbox {
+        display: none;
+        &:checked + .b-settingMenu__subtitle::after {
+            content: url("/assets/img/appIcon/checkboxCheck.png");
+        }
+    }
+
+    &_show {
+        display: block;
+    }
+}
+
+.b-dropdownList {
+    border: none;
+    background-color: #ffffff;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    cursor: pointer;
+    &__img {
+        margin-right: 10px;
+        width: 13.5px;
+    }
+    &__text {
+        margin: 0;
+        font-family: Montserrat bold;
+        font-size: 12px;
+        line-height: 16px;
+        color: #1071ff;
+    }
+    &:hover {
+        background-color: #f6f9ff;
+    }
+    &:focus {
+        background-color: #e2eeff;
+    }
+    &:active {
+        background-color: #d9e8ff;
+    }
+}
+
+.b-canselFilterBtn {
+    height: 36px;
+    width: 116px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    cursor: pointer;
+    border: none;
+    border-radius: 24px;
+    &__img {
+        margin-right: 12px;
+        width: 9px;
+    }
+    &__text {
+        margin: 0;
+        font-family: Montserrat bold;
+        font-size: 12px;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+    &:hover {
+        background-color: #f6f9ff;
+    }
+    &:focus {
+        background-color: #e2eeff;
+    }
+    &:active {
+        background-color: #d9e8ff;
+    }
+}
+@media (max-width: 667px) {
+    .b-filters {
+        display: flex;
+        &__components {
+            margin-top: 23px;
+            margin-left: 18px;
+        }
+    }
+    .b-settings {
+        &__counter {
+            display: none;
+        }
+        &__setFilter {
+            margin-left: 12px;
+            margin-top: 4px;
+            width: 20px;
+        }
+    }
+    .b-dropdownList {
+        &__img {
+            width: 15px;
+            height: 15px;
+        }
+        &__text {
+            display: none;
+        }
+    }
+    .b-canselFilterBtn {
+        display: none;
+    }
+}

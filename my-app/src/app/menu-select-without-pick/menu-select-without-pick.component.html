@@ -1,0 +1,28 @@
+<div class="b-selectorWOPrepick">
+    <div class="b-selectorWOPrepick__fakeBody">
+        <div class="b-selectorWOPrepick__body">
+            <div class="b-selectorWOPrepick__box">
+                <div *ngIf="(checked.title === ''); then thenblock else elseblock"></div>
+                <ng-template #thenblock>
+                    <img src="{{menuSelectable.placeholderImg}}" alt="" class="b-selectorWOPrepick__icon">
+                    <p class="b-selectorWOPrepick__label b-selectorWOPrepick__label_empty">
+                        {{menuSelectable.placeholder}}</p>
+                    <img src="assets/img/appIcon/angle.svg" alt="" class="b-selectorWOPrepick__angle">
+                </ng-template>
+                <ng-template #elseblock>
+                    <img src="{{checked.img}}" alt="" class="b-selectorWOPrepick__icon">
+                    <p class="b-selectorWOPrepick__label">
+                        {{menuSelectable.placeholder}}</p>
+                    <p class="b-selectorWOPrepick__choise">{{checked.title}}</p>
+                    <img src="assets/img/appIcon/shape.svg" alt="" class="b-selectorWOPrepick__shape"
+                        (click)="clearPick()">
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <ul class="b-selectorWOPrepick__choiseBox">
+        <li *ngFor="let variant of menuSelectable.points" class="b-selectorWOPrepick__variable" id="{{variant.id}}"
+            (click)="pick(variant)">
+            {{variant.title}}</li>
+    </ul>
+</div>

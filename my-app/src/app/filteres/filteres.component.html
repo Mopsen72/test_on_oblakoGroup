@@ -1,0 +1,69 @@
+<div class="b-filters container_small">
+    <div class="b-filters__components">
+        <search class="b-filters__search"></search>
+        <menu-select [selector]="selectProgramm" class="b-filters__select"></menu-select>
+        <menu-select [selector]="selectPeroid" class="b-filters__select"></menu-select>
+        <menu-select [selector]="selectStatus" class="b-filters__select"></menu-select>
+    </div>
+    <div class="b-filters__settings b-settings">
+        <p class="b-settings__counter">{{sessions.length}} сессии</p>
+        <button class="b-settings__setFilter b-dropdownList" (click)="toggleMenu($event)">
+            <img class="b-dropdownList__img" src="assets/img/appIcon/settings.svg" alt="">
+            <p class="b-dropdownList__text">Настроить фильтр</p>
+            <div class="b-settingMenu">
+                <div class="b-settingMenu__box">
+                    <p class="b-settingMenu__title">Системные поля</p>
+                    <ul class="b-settingMenu__list">
+                        <li>
+                            <input type="checkbox" name="checkbox" [checked]="list[0].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label (click)="toggleFilterChoice($event)" id="{{list[0].id}}"
+                                [class]="list[0].classes">{{list[0].title}}</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox" [checked]="list[1].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label (click)="toggleFilterChoice($event)" id="{{list[1].id}}"
+                                [class]="list[1].classes">{{list[1].title}}</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox" [checked]="list[2].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label (click)="toggleFilterChoice($event)" id="{{list[2].id}}"
+                                [class]="list[2].classes">{{list[2].title}}</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox" [checked]="list[3].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label (click)="toggleFilterChoice($event)" id="{{list[3].id}}"
+                                [class]="list[3].classes">{{list[3].title}}</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="b-settingMenu__box">
+                    <p class="b-settingMenu__title">Дополнительные поля</p>
+                    <ul class="b-settingMenu__list">
+                        <li>
+                            <input type="checkbox" name="checkbox" [checked]="list[4].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label (click)="toggleFilterChoice($event)" id="{{list[4].id}}"
+                                [class]="list[4].classes">{{list[4].title}}</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox" [checked]="list[5].isActive"
+                                class="b-settingMenu__checkbox">
+                            <label (click)="toggleFilterChoice($event)" id="{{list[5].id}}"
+                                [class]="list[5].classes">{{list[5].title}}</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </button>
+        <button class="b-settings__cancelFilter b-canselFilterBtn">
+            <img src="assets/img/appIcon/shape.svg" alt="" class="b-canselFilterBtn__img">
+            <p class="b-canselFilterBtn__text">Сбросить</p>
+        </button>
+    </div>
+</div>
+<menu-select [selector]="selectSort"></menu-select>
+<session></session>

@@ -1,0 +1,18 @@
+<div class="{{selector.classList}}">
+    <div class="b-selector__fakeBody">
+        <div class="{{selector.classListbody}}">
+            <div class="b-selector__box">
+                <p class="b-selector__label">{{selector.placeholder}}</p>
+                <p class="b-selector__choise"> {{selected}}
+                </p>
+            </div>
+            <img src="assets/img/appIcon/angle.svg" alt="" class="b-selector__angle">
+        </div>
+    </div>
+    <ul class="b-selector__choiseBox">
+        <li *ngFor="let variant of selector.menuPoint" (click)="onSelect(variant)" class="b-selector__variable"
+            id="{{variant.id}}">
+            {{variant.title}}
+        </li>
+    </ul>
+</div>

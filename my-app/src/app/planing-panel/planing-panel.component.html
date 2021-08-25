@@ -1,0 +1,19 @@
+<div class="posRel">
+    <div class="b-planingPanel b-planingPanel_position">
+        <div class="b-planingPanel__head">
+            <h4 class="b-planingPanel__title">Планирование</h4>
+            <div class="b-planingPanel__control">
+                <img src="assets/img/appIcon/check.svg" alt=""
+                    class="b-planingPanel__controlImg b-planingPanel__controlImg_marR">
+                <img src="assets/img/appIcon/shape.svg" alt=""
+                    class="b-planingPanel__controlImg b-planingPanel__controlImg_smallMargR"
+                    (click)="closePlaningPanel($event)">
+            </div>
+        </div>
+        <div class="b-planingPanel__tabs">
+            <tabs [points]="planginPanelTabs"></tabs>
+        </div>
+        <planing-panel-main *ngIf="planginPanelTabs[0].isActive"></planing-panel-main>
+        <planing-panel-participants *ngIf="planginPanelTabs[1].isActive"></planing-panel-participants>
+    </div>
+</div>

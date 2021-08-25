@@ -1,0 +1,13 @@
+<div class="activityBlock">
+    <div class="choiseName">
+        <div class="choiseName__box">
+            <input type="text" class="choiseName__input" (focus)="upLabel($event)" (blur)="downLabel($event)">
+            <label class="choiseName__label">Мероприятие</label>
+        </div>
+    </div>
+    <div class="pickerBox">
+        <menu-select-without-pick [menuSelectable]="selectDate"></menu-select-without-pick>
+        <menu-select-without-pick [menuSelectable]="selectTime"></menu-select-without-pick>
+        <menu-select-without-pick [menuSelectable]="selectCouch"></menu-select-without-pick>
+    </div>
+</div>

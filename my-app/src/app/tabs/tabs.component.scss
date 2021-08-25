@@ -1,0 +1,40 @@
+.b-tabs {
+    display: flex;
+    list-style-type: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    &__point {
+        position: relative;
+        margin-right: 25px;
+        height: 36px;
+        font-family: Montserrat;
+        font-size: 12px;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.54);
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        cursor: pointer;
+        &_active {
+            color: rgba(0, 0, 0, 0.87);
+            &::after {
+                content: "";
+                position: absolute;
+                border-bottom: 2px solid #1071ff;
+                bottom: 0;
+                width: 100%;
+                animation-name: tabs_active_after;
+                animation-duration: 1s;
+            }
+        }
+    }
+}
+@media (max-width: 667px) {
+    .b-tabs {
+        &:first-child {
+            margin-left: 18px;
+        }
+        &__point {
+            margin-right: 16px;
+        }
+    }
+}

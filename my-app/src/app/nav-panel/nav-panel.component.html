@@ -1,0 +1,11 @@
+<div class="b-navPanel container">
+    <img src="assets/img/appIcon/sideBar.svg" alt="sideBar" class="b-navPanel__sideBar b-navPanel__sideBar_marginLeft">
+    <p class="b-navPanel__title">Обучение</p>
+    <div class="b-navPanel__planing b-link b-link_marginRight" (click)="openPlaningPanel($event)">
+        <img src="assets/img/appIcon/plus.svg" alt="plus" class="b-link__simbol b-link__simbol_marginRight">
+        <p class="b-link__text">Запланировать</p>
+        <div class="b-link__cover">
+            <planing-panel></planing-panel>
+        </div>
+    </div>
+</div>

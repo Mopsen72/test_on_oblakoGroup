@@ -1,0 +1,94 @@
+.b-selector {
+    position: relative;
+    &__fakeBody {
+        height: 66px;
+    }
+    &__body {
+        width: 166px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.38);
+        &_planingProgramm {
+            width: 818px;
+        }
+        &_planingPartici {
+            width: 182px;
+        }
+    }
+    &__box {
+        margin: 0;
+    }
+    &__label {
+        margin: 0 0 4px;
+        font-family: Montserrat;
+        font-size: 10px;
+        line-height: 12px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+    &__choise {
+        margin: 0 0 7px;
+        font-family: Montserrat;
+        font-size: 12px;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    &__angle {
+        margin: 22px 4px 0;
+        width: 10.5px;
+        height: 6.31px;
+    }
+    &__choiseBox {
+        position: absolute;
+        top: 46px;
+        width: 100%;
+        display: none;
+        padding: 8px 0;
+        background: #ffffff;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+        border-radius: 4px;
+        list-style-type: none;
+    }
+    &__variable {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 10px 16px;
+        font-family: Montserrat;
+        font-size: 12px;
+        line-height: 16px;
+        cursor: pointer;
+        animation-name: menu_choise_variabe;
+        animation-duration: 1s;
+        &:hover {
+            background-color: #f6f6f6;
+        }
+        &:active {
+            background-color: #cbcbcb;
+        }
+        &_active {
+            color: #1071ff;
+        }
+    }
+    &:hover .b-selector__choiseBox {
+        display: block;
+        z-index: 2;
+    }
+    &_noShowDesk {
+        display: none;
+    }
+}
+@media (max-width: 667px) {
+    .b-selector {
+        &_noShowMobie {
+            display: none;
+        }
+        &_noShowDesk {
+            display: block;
+        }
+        &_margin {
+            margin: 33px 18px 10px 18px;
+        }
+        &__body {
+            width: 328px;
+        }
+    }
+}
