@@ -8,10 +8,18 @@
     &__settings {
         display: flex;
     }
+    &__search {
+        margin-right: 30px;
+        width: 166px;
+    }
+    &__select {
+        margin-right: 30px;
+    }
 }
 .b-settings {
     margin-top: 25px;
     &__counter {
+        margin: 0;
         height: 36px;
         width: 100px;
         display: flex;
@@ -20,13 +28,12 @@
         font-size: 12px;
         line-height: 16px;
         color: rgba(0, 0, 0, 0.54);
-        margin: 0;
     }
     &__setFilter {
+        position: relative;
         margin-left: 38px;
         width: 181px;
         height: 36px;
-        position: relative;
     }
     &__cancelFilter {
         margin-left: 5px;

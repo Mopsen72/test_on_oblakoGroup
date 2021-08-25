@@ -9,10 +9,10 @@ import { MenuChoiser } from '../menuChoiseItr';
 export class PlaningPanelMainComponent implements OnInit {
 
   conditions = [
-    { title: 'Не использовать код доступа', active: true, id: 0 },
-    { title: 'Требовать регистрацию', active: false, id: 1 },
-    { title: 'Запросить только имя и фамилию', active: false, id: 2 },
-    { title: 'Не требовать регистрацию, имя и фамилию', active: false, id: 3 }
+    { title: 'Не использовать код доступа', isActive: true, id: 'radPlan0000' },
+    { title: 'Требовать регистрацию', isActive: false, id: 'radPlan0001' },
+    { title: 'Запросить только имя и фамилию', isActive: false, id: 'radPlan0002' },
+    { title: 'Не требовать регистрацию, имя и фамилию', isActive: false, id: 'radPlan0003' }
   ]
   public selectProgrammInPlaning: MenuChoiser = {
     placeholder: "Программа",
@@ -24,37 +24,10 @@ export class PlaningPanelMainComponent implements OnInit {
     classList: 'b-selector b-selector_margin',
     classListbody: 'b-selector__body b-selector__body_planingProgramm'
   }
-  public selectDate = {
-    placeholder: 'Дата',
-  }
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  changeRadio(e: any): void {
-    if (e.target.className == "conditions__radio") {
-      const point = this.conditions.findIndex((el) => { return el.title == e.target.innerText });
-      this.conditions.forEach((el) => { el.active = false });
-      this.conditions[point].active = true;
-    };
-    if (e.target.className == "conditions__radioImg") {
-      const point = this.conditions.findIndex((el) => { return el.title == e.target.parentElement.innerText });
-      this.conditions.forEach((el) => { el.active = false });
-      this.conditions[point].active = true;
-    }
-    const arr = document.querySelectorAll('.conditions__radio')
-    arr.forEach((el) => {
-      el.classList.remove('conditions__radio_active');
-      el.children[0].attributes[1].nodeValue = "assets/img/appIcon/radioButton.svg"
-    });
-    this.conditions.forEach((el, i) => {
-      if (el.active) {
-        arr[i].classList.add('conditions__radio_active');
-        arr[i].children[0].attributes[1].nodeValue = "assets/img/appIcon/radioButtonActive.svg"
-      }
-    })
-
-  }
 }

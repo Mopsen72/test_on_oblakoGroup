@@ -11,6 +11,9 @@
         &_planingProgramm {
             width: 818px;
         }
+        &_planingPartici {
+            width: 182px;
+        }
     }
     &__box {
         margin: 0;
@@ -68,9 +71,6 @@
     &:hover .b-selector__choiseBox {
         display: block;
         z-index: 2;
-    }
-    &_margin {
-        margin-right: 30px;
     }
     &_noShowDesk {
         display: none;

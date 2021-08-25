@@ -28,6 +28,9 @@
         flex-wrap: wrap;
         align-content: space-between;
     }
+    &__search {
+        width: 182px;
+    }
     &__people {
         margin-top: 30px;
     }
@@ -48,6 +51,7 @@
         box-sizing: border-box;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         font-family: Montserrat;
         font-size: 12px;
         line-height: 16px;
@@ -57,9 +61,15 @@
         border-radius: 4px;
     }
     &__checkbox {
-        margin-right: 8px;
-        width: 16px;
-        height: 16px;
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+        &:checked + .participants__text::before {
+            content: url("/assets/img/appIcon/checkboxCheck.png");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
     &__avatar {
         margin-right: 16px;
@@ -68,6 +78,17 @@
     }
     &__text {
         width: 320px;
+        display: flex;
+        align-items: center;
+        &::before {
+            content: "";
+            margin-right: 8px;
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
     }
     &__dragNotify {
         margin-top: 200px;
@@ -89,8 +110,6 @@
         width: 317px;
     }
     &_animation {
-        position: absolute;
-        left: 0;
         animation-name: planing_panel_open;
         animation-duration: 1s;
     }
@@ -109,55 +128,54 @@
 }
 .b-settings {
     &__counter {
+        margin: 0 10px 0 0;
         height: 36px;
-        width: 100px;
+        width: 120px;
         display: flex;
         align-items: center;
-
         font-family: Montserrat;
-        font-style: normal;
-        font-weight: 500;
         font-size: 12px;
         line-height: 16px;
         color: rgba(0, 0, 0, 0.54);
-        margin: 0;
     }
     &__setFilter {
         width: 130px;
         height: 36px;
         position: relative;
-        @media (max-width: 667px) {
-            margin-left: 12px;
-            margin-top: 4px;
-            width: 20px;
-        }
     }
 }
 .b-settingMenu {
     position: absolute;
     display: none;
     top: 42px;
+    padding: 8px 0;
+    width: 168px;
     background-color: #ffffff;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
     border-radius: 4px;
-    width: 168px;
     &__box {
         box-sizing: border-box;
         margin: 0;
     }
+    &__list {
+        list-style-type: none;
+    }
     &__title {
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 10px;
-        line-height: 12px;
-        color: rgba(0, 0, 0, 0.54);
         margin: 0;
         padding: 10px 16px;
+        font-family: Montserrat;
+        font-size: 10px;
+        line-height: 12px;
+        text-align: start;
+        color: rgba(0, 0, 0, 0.54);
         animation-name: open_setting_title;
         animation-duration: 1s;
     }
     &__subtitle {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         height: 36px;
         box-sizing: border-box;
         padding: 10px 16px;
@@ -167,10 +185,6 @@
         font-size: 12px;
         line-height: 16px;
         color: rgba(0, 0, 0, 0.87);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0;
         cursor: pointer;
         animation-name: open_setting_subtitle;
         animation-duration: 1s;
@@ -180,12 +194,17 @@
         &_active {
             color: #1071ff;
         }
+        &::after {
+            content: "";
+            width: 16px;
+            height: 16px;
+            display: block;
+        }
     }
     &__checkbox {
-        width: 12px;
         display: none;
-        &_active {
-            display: block;
+        &:checked + .b-settingMenu__subtitle::after {
+            content: url("/assets/img/appIcon/checkboxCheck.png");
         }
     }
     &_show {
@@ -194,59 +213,65 @@
 }
 
 .b-dropdownList {
+    border: none;
+    background-color: #ffffff;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 24px;
+    cursor: pointer;
     &__img {
         margin-right: 10px;
         width: 13.5px;
-        @media (max-width: 667px) {
-            width: 15px;
-            height: 15px;
-        }
     }
     &__text {
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: 600;
+        margin: 0;
+        font-family: Montserrat bold;
         font-size: 12px;
         line-height: 16px;
         color: #1071ff;
-        margin: 0;
-        @media (max-width: 667px) {
-            display: none;
-        }
+    }
+    &:hover {
+        background-color: #f6f9ff;
+    }
+    &:focus {
+        background-color: #e2eeff;
+    }
+    &:active {
+        background-color: #d9e8ff;
     }
 }
-:hover > .b-dropdownList {
-    background-color: #f6f9ff;
-}
-:focus > .b-dropdownList {
-    background-color: #e2eeff;
-}
-:active > .b-dropdownList {
-    background-color: #d9e8ff;
-}
+
 .b-canselFilterBtn {
     height: 36px;
-    align-items: center;
+    width: 116px;
     display: flex;
-    @media (max-width: 667px) {
-        display: none;
-    }
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    cursor: pointer;
+    border: none;
+    border-radius: 24px;
+
     &__img {
         margin-right: 12px;
         width: 9px;
     }
     &__text {
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: 600;
+        margin: 0;
+        font-family: Montserrat bold;
         font-size: 12px;
         line-height: 16px;
-        margin: 0;
         color: rgba(0, 0, 0, 0.54);
+    }
+    &:hover {
+        background-color: #f6f9ff;
+    }
+    &:focus {
+        background-color: #e2eeff;
+    }
+    &:active {
+        background-color: #d9e8ff;
     }
 }

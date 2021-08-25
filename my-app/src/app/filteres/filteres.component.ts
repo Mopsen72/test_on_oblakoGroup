@@ -18,10 +18,10 @@ export class FilteresComponent implements OnInit {
     { title: 'Тренер', isActive: false, id: "l0004", classes: "b-settingMenu__subtitle" },
     { title: 'Прогресс', isActive: false, id: "l0005", classes: "b-settingMenu__subtitle" }
   ];
-  public selectProgramm: MenuChoiser = { placeholder: "Программа", menuPoint: [{ title: 'Все', isActive: true, id: 'selpr0000' }, { title: 'lorem', isActive: false, id: 'selpr0001' }, { title: 'lorem lorem', isActive: false, id: 'selpr0002' }], classList: 'b-selector b-selector_margin b-selector_noShowMobie', classListbody: "b-selector__body" }
-  public selectPeroid: MenuChoiser = { placeholder: "Период", menuPoint: [{ title: 'Июнь 2019', isActive: true, id: 'selpe0000' }, { title: 'lorem', isActive: false, id: 'selpe0001' }, { title: 'lorem lorem', isActive: false, id: 'selpe0002' }], classList: 'b-selector b-selector_margin b-selector_noShowMobie', classListbody: "b-selector__body" }
-  public selectStatus: MenuChoiser = { placeholder: "Статус", menuPoint: [{ title: 'Все', isActive: true, id: 'selstat0000' }, { title: 'lorem', isActive: false, id: 'selstat0001' }, { title: 'lorem lorem', isActive: false, id: 'selstat0002' }], classList: 'b-selector b-selector_margin b-selector_noShowMobie', classListbody: "b-selector__body" }
-  public selectSort: MenuChoiser = { placeholder: "Сортировка", menuPoint: [{ title: 'По прогрессу обучения', isActive: true, id: 'selstat0000' }, { title: 'lorem', isActive: false, id: 'selstat0001' }, { title: 'lorem lorem', isActive: false, id: 'selstat0002' }], classList: 'b-selector b-selector_margin b-selector_noShowDesk', classListbody: "b-selector__body" }
+  public selectProgramm: MenuChoiser = { placeholder: "Программа", menuPoint: [{ title: 'Все', isActive: true, id: 'selpr0000' }, { title: 'lorem', isActive: false, id: 'selpr0001' }, { title: 'lorem lorem', isActive: false, id: 'selpr0002' }], classList: 'b-selector b-selector_noShowMobie', classListbody: "b-selector__body" }
+  public selectPeroid: MenuChoiser = { placeholder: "Период", menuPoint: [{ title: 'Июнь 2019', isActive: true, id: 'selpe0000' }, { title: 'lorem', isActive: false, id: 'selpe0001' }, { title: 'lorem lorem', isActive: false, id: 'selpe0002' }], classList: 'b-selector b-selector_noShowMobie', classListbody: "b-selector__body" }
+  public selectStatus: MenuChoiser = { placeholder: "Статус", menuPoint: [{ title: 'Все', isActive: true, id: 'selstat0000' }, { title: 'lorem', isActive: false, id: 'selstat0001' }, { title: 'lorem lorem', isActive: false, id: 'selstat0002' }], classList: 'b-selector b-selector_noShowMobie', classListbody: "b-selector__body" }
+  public selectSort: MenuChoiser = { placeholder: "Сортировка", menuPoint: [{ title: 'По прогрессу обучения', isActive: true, id: 'selstat0000' }, { title: 'lorem', isActive: false, id: 'selstat0001' }, { title: 'lorem lorem', isActive: false, id: 'selstat0002' }], classList: 'b-selector b-selector_noShowDesk', classListbody: "b-selector__body" }
 
 
   constructor() { }
@@ -33,8 +33,7 @@ export class FilteresComponent implements OnInit {
     if (e.target.className == "b-dropdownList__text" || e.target.className == "b-dropdownList__img") {
       const element = e.target.parentElement.children[2];
       element?.classList.toggle('b-settingMenu_show');
-    }
-    if (e.target.className == "b-settings__setFilter b-dropdownList") {
+    } else if (e.target.className == "b-settings__setFilter b-dropdownList") {
       const element = e.target.children[2];
       element?.classList.toggle('b-settingMenu_show');
     }

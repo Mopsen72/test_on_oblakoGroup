@@ -9,21 +9,10 @@
     <div class="conditions conditions_marT">
         <p class="conditions__title">Условия записи по коду</p>
         <div class="conditions__radioBox">
-            <div class="conditions__radio conditions__radio_active" (click)="changeRadio($event)">
-                <img src="assets/img/appIcon/radioButtonActive.svg" alt=""
-                    class="conditions__radioImg">{{conditions[0].title}}
-            </div>
-            <div class="conditions__radio" (click)="changeRadio($event)">
-                <img src="assets/img/appIcon/radioButton.svg" alt=""
-                    class="conditions__radioImg">{{conditions[1].title}}
-            </div>
-            <div class="conditions__radio" (click)="changeRadio($event)">
-                <img src="assets/img/appIcon/radioButton.svg" alt=""
-                    class="conditions__radioImg">{{conditions[2].title}}
-            </div>
-            <div class="conditions__radio" (click)="changeRadio($event)">
-                <img src="assets/img/appIcon/radioButton.svg" alt=""
-                    class="conditions__radioImg">{{conditions[3].title}}
+            <div *ngFor="let variant of conditions">
+                <input type="radio" id="{{variant.id}}" name="conditions" class="conditions__input"
+                    [checked]="variant.isActive">
+                <label for="{{variant.id}}" class="conditions__label">{{variant.title}}</label>
             </div>
         </div>
 

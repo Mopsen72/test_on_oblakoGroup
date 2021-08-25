@@ -17,35 +17,47 @@
     &__radioBox {
         margin-top: 18px;
     }
-    &__radio {
+
+    &_marT {
+        margin-top: 33px;
+    }
+    &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        &:checked + .conditions__label::before {
+            content: "\25CF";
+            font-size: 16px;
+            line-height: 18px;
+            text-align: center;
+            color: #1071ff;
+            background-color: #d9e8ff;
+        }
+        &:checked + .conditions__label {
+            color: rgba(0, 0, 0, 0.87);
+        }
+    }
+    &__label {
+        height: 36px;
+        display: flex;
+        align-items: center;
         font-family: Montserrat;
         font-size: 12px;
         line-height: 16px;
         color: rgba(0, 0, 0, 0.54);
-        display: flex;
-        align-items: center;
-        height: 36px;
-        cursor: pointer;
-        margin: 0 -8px;
-        &_active {
-            color: rgba(0, 0, 0, 0.87);
+        &::before {
+            content: "";
+            margin-right: 16px;
+            width: 20px;
+            height: 20px;
+            display: block;
+            background-color: #f2f2f2;
+            border-radius: 10px;
         }
-    }
-    &__radio:hover {
-        background-color: rgba(0, 0, 0, 0.034);
-        border-radius: 4px;
-    }
-    &__radioImg {
-        margin: 0 16px 0 8px;
-    }
-    &_marT {
-        margin-top: 33px;
     }
 }
 .planingPanel__main {
     margin-top: 33px;
-    position: absolute;
-    left: 0;
     animation-name: planing_panel_open;
     animation-duration: 1s;
 }

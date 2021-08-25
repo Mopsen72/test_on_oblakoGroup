@@ -1,9 +1,9 @@
 <div class="b-filters container_small">
     <div class="b-filters__components">
-        <search></search>
-        <menu-select [selector]="selectProgramm"></menu-select>
-        <menu-select [selector]="selectPeroid"></menu-select>
-        <menu-select [selector]="selectStatus"></menu-select>
+        <search class="b-filters__search"></search>
+        <menu-select [selector]="selectProgramm" class="b-filters__select"></menu-select>
+        <menu-select [selector]="selectPeroid" class="b-filters__select"></menu-select>
+        <menu-select [selector]="selectStatus" class="b-filters__select"></menu-select>
     </div>
     <div class="b-filters__settings b-settings">
         <p class="b-settings__counter">{{sessions.length}} сессии</p>
@@ -14,10 +14,11 @@
                 <div class="b-settingMenu__box">
                     <p class="b-settingMenu__title">Системные поля</p>
                     <ul class="b-settingMenu__list">
-                        <li (click)="toggleFilterChoice($event)">
+                        <li>
                             <input type="checkbox" name="checkbox" [checked]="list[0].isActive"
                                 class="b-settingMenu__checkbox">
-                            <label id="{{list[0].id}}" [class]="list[0].classes">{{list[0].title}}</label>
+                            <label (click)="toggleFilterChoice($event)" id="{{list[0].id}}"
+                                [class]="list[0].classes">{{list[0].title}}</label>
                         </li>
                         <li>
                             <input type="checkbox" name="checkbox" [checked]="list[1].isActive"
